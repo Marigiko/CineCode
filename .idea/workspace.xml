@@ -4,70 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e4d10ae-d858-4235-a1c6-7632c6360575" name="Changes" comment="Changes2">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/controller/CrudApiRestController.java" afterDir="false" />
+    <list default="true" id="4e4d10ae-d858-4235-a1c6-7632c6360575" name="Changes" comment="Añadimos templates">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/controller/PathController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/entity/Crud.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/repository/CrudRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/cart.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/cart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/app-store.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/buy-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/buy-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/buy-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/cart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/category-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/category-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/category-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/exclusive.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/gallery-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/gallery-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/gallery-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/gallery-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/image1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/img-credit.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/logo-coca-cola.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/logo-godrej.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/logo-oppo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/logo-paypal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/logo-philips.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/logo-white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/menu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/play-store.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/product-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/product-10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/product-11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/product-12.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/product-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/product-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/product-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/product-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/product-6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/product-7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/product-8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/product-9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/user-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/user-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/user-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/CinekodigoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/CinekodigoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/controller/ClientController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/entity/Client.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/repository/ClientRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/service/ClientService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/service/impl/ClientServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cinekodigo/cinekodigo/CinekodigoApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cinekodigo/cinekodigo/CinekodigoApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cinekodigo/cinekodigo/controller/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cinekodigo/cinekodigo/controller/ClientController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/clients.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/clients.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/controller/WebMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/controller/WebMainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cinekodigo/cinekodigo/controller/ClientController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cinekodigo/cinekodigo/controller/WebMainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cinekodigo/cinekodigo/controller/WebMainController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -138,13 +85,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/controller" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.54252875" />
     <property name="settings.editor.selected.configurable" value="preferences.editor.code.editing" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/controller" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/js" />
       <recent name="$PROJECT_DIR$/src/main" />
@@ -181,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644597645646</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Añadimos templates">
+      <created>1644706757537</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1644706757537</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -211,6 +169,7 @@
     <MESSAGE value="First commit" />
     <MESSAGE value="Changes" />
     <MESSAGE value="Changes2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes2" />
+    <MESSAGE value="Añadimos templates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Añadimos templates" />
   </component>
 </project>

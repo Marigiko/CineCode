@@ -1,4 +1,5 @@
 /media/marigiko/Mario/Mario/Trabajo/Proyectos/FullStackProject/src/main/java/com/cinekodigo/cinekodigo/CinekodigoApplication.java
+/media/marigiko/Mario/Mario/Trabajo/Proyectos/FullStackProject/src/main/java/com/cinekodigo/cinekodigo/controller/PathController.java
 /media/marigiko/Mario/Mario/Trabajo/Proyectos/FullStackProject/src/main/java/com/cinekodigo/cinekodigo/controller/ResourceNotFoundException.java
 /media/marigiko/Mario/Mario/Trabajo/Proyectos/FullStackProject/src/main/java/com/cinekodigo/cinekodigo/controller/WebMainController.java
 /media/marigiko/Mario/Mario/Trabajo/Proyectos/FullStackProject/src/main/java/com/cinekodigo/cinekodigo/controller/CrudApiRestController.java

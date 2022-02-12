@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class WebMainController {
     @RequestMapping(value = "/")
     public String index() {
-        return "index";
+        return "home";
     }
 }
