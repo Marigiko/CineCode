@@ -9,6 +9,7 @@
 <body>
 <div class="container">
     <div class="row">
+
         <h1>List Clients</h1>
 
     </div>
@@ -20,18 +21,8 @@
             <th>Client Last name</th>
             <th>email</th>
             <th>acctions</th>
-
         </tr>
         </thead>
-
-        <tbody>
-
-        <tr th:each="client: ${clients}">
-            <td th:text="${client.firstName}"></td>
-            <td th:text="${client.lastName}"></td>
-            <td th:text="${client.email}"></td>
-        </tr>
-        </tbody>
     </table>
 
 </div>

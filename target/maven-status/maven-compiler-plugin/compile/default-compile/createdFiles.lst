@@ -1,2 +1,6 @@
+com/cinekodigo/cinekodigo/repository/CrudRepository.class
+com/cinekodigo/cinekodigo/controller/CrudApiRestController.class
 com/cinekodigo/cinekodigo/controller/ResourceNotFoundException.class
 com/cinekodigo/cinekodigo/controller/WebMainController.class
+com/cinekodigo/cinekodigo/controller/PathController.class
+com/cinekodigo/cinekodigo/entity/Crud.class
