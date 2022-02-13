@@ -4,17 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e4d10ae-d858-4235-a1c6-7632c6360575" name="Changes" comment="Añadimos templates">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/controller/PathController.java" afterDir="false" />
+    <list default="true" id="4e4d10ae-d858-4235-a1c6-7632c6360575" name="Changes" comment="Añadimos Rutas al proyecto">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/entity/Movies.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/entity/Users.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/controller/WebMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/controller/WebMainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/controller/CrudApiRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/controller/CrudApiRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/entity/Crud.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/repository/CrudRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/static/js/cart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cinekodigo/cinekodigo/controller/ClientController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cinekodigo/cinekodigo/controller/WebMainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cinekodigo/cinekodigo/controller/WebMainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/static/styles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cinekodigo/cinekodigo/CinekodigoApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cinekodigo/cinekodigo/controller/ResourceNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cinekodigo/cinekodigo/controller/WebMainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cinekodigo/cinekodigo/entity/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cinekodigo/cinekodigo/repository/ClientRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cinekodigo/cinekodigo/service/ClientService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cinekodigo/cinekodigo/service/impl/ClientServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/clients.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +41,7 @@
         <option value="Kotlin Class" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="package-info" />
       </list>
     </option>
   </component>
@@ -85,7 +96,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/controller" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/static/styles" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.54252875" />
@@ -93,13 +104,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/static/styles" />
       <recent name="$PROJECT_DIR$/src/main/java/com/cinekodigo/cinekodigo/controller" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/static/styles" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/static/js" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/static" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/js" />
-      <recent name="$PROJECT_DIR$/src/main" />
-      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -139,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644706757537</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Añadimos Rutas al proyecto">
+      <created>1644708925802</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1644708925802</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -170,6 +191,11 @@
     <MESSAGE value="Changes" />
     <MESSAGE value="Changes2" />
     <MESSAGE value="Añadimos templates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Añadimos templates" />
+    <MESSAGE value="Añadimos Rutas al proyecto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Añadimos Rutas al proyecto" />
+  </component>
+  <component name="XPathView.XPathProjectComponent">
+    <history />
+    <find-history />
   </component>
 </project>
