@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usuarios</title>
+  </head>
+  <body>
+    <h1>Usuarios</h1>
+
+    <!-- Formulario para agregar un nuevo usuario -->
+    <form id="addUserForm">
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" required />
+      <br />
+      <label for="email">Email:</label>
+      <input type="email" id="email" required />
+      <br />
+      <label for="mobile_number">Número de Teléfono:</label>
+      <input type="text" id="mobile_number" required />
+      <br />
+      <button type="submit">Agregar Usuario</button>
+    </form>
+
+    <!-- Lista de usuarios -->
+    <ul id="userList">
+      <!-- Los usuarios se mostrarán aquí -->
+    </ul>
+
+    <style>
+      /* Estilos generales */
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      /* Formulario de agregar usuario */
+      #addUserForm {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      #addUserForm input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      #addUserForm button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      /* Lista de usuarios */
+      #userList {
+        list-style: none;
+        padding: 0;
+      }
+
+      #userList li {
+        background-color: #fff;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      #userList button {
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+
+      /* Footer */
+      .footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+      }
+
+      .footer a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      /* Estilos adicionales */
+      button.btnr {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 16px;
+        text-decoration: none;
+        margin-top: 20px;
+        display: inline-block;
+      }
+
+      /* Responsive */
+      @media screen and (max-width: 768px) {
+        #addUserForm {
+          width: 100%;
+        }
+
+        #addUserForm button {
+          width: 100%;
+        }
+      }
+    </style>
+
+    <!-- Script para manejar las operaciones CRUD -->
+    <script>
+      const userList = document.getElementById("userList");
+      const addUserForm = document.getElementById("addUserForm");
+
+      // Función para cargar la lista de usuarios
+      function loadUsers() {
+        fetch("/api/Crud")
+          .then((response) => response.json())
+          .then((data) => {
+            userList.innerHTML = "";
+            data.forEach((user) => {
+              const listItem = document.createElement("li");
+              listItem.innerHTML = `
+                            <strong>${user.name}</strong> (${user.email}) - Teléfono: ${user.mobile_number}
+                            <button onclick="editUser(${user.id})">Editar</button>
+                            <button onclick="deleteUser(${user.id})">Eliminar</button>
+                        `;
+              userList.appendChild(listItem);
+            });
+          });
+      }
+
+      // Función para agregar un nuevo usuario
+      addUserForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const mobile_number = document.getElementById("mobile_number").value;
+
+        fetch("/api/Crud", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            mobile_number: mobile_number,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            loadUsers();
+            addUserForm.reset();
+          });
+      });
+
+      // Función para editar un usuario
+      function editUser(userId) {
+        const newName = prompt("Nuevo nombre:");
+        const newEmail = prompt("Nuevo email:");
+        const newMobileNumber = prompt("Nuevo número de teléfono:");
+
+        if (newName !== null && newEmail !== null && newMobileNumber !== null) {
+          fetch(`/api/Crud/${userId}`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name: newName,
+              email: newEmail,
+              mobile_number: newMobileNumber,
+            }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              loadUsers();
+            });
+        }
+      }
+
+      // Función para eliminar un usuario
+      function deleteUser(userId) {
+        const confirmation = confirm(
+          "¿Estás seguro de que deseas eliminar este usuario?"
+        );
+        if (confirmation) {
+          fetch(`/api/Crud/${userId}`, {
+            method: "DELETE",
+          }).then((response) => {
+            if (response.status === 204) {
+              loadUsers();
+            } else {
+              alert("Error al eliminar el usuario.");
+            }
+          });
+        }
+      }
+
+      // Cargar la lista de usuarios al cargar la página
+      loadUsers();
+    </script>
+  </body>
+</html>

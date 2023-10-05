@@ -1,160 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TresDSV</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+  </head>
+  <body onload="render()">
+    <!-- Messenger plugin de chat Code -->
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function () {
+        FB.init({
+          xfbml: true,
+          version: "v10.0",
+        });
+      };
 
-    <title> TresDSV</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!--  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+      (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, "script", "facebook-jssdk");
+    </script>
 
-</head>
+    <!-- Your plugin de chat code -->
+    <div
+      class="fb-customerchat"
+      attribution="setup_tool"
+      page_id="101843298723123"
+    ></div>
 
-<body onload="render()">
-
-<!-- Messenger plugin de chat Code -->
-<div id="fb-root"></div>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      xfbml            : true,
-      version          : 'v10.0'
-    });
-  };
-
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
-
-<!-- Your plugin de chat code -->
-<div class="fb-customerchat"
-     attribution="setup_tool"
-     page_id="101843298723123">
-</div>
-
-<div class="navbar">
-    <div class="logo" >
-        <img src="images/logo.png" width="125px">
+    <div class="navbar">
+      <div class="container">
+        <nav>
+          <ul id="MenuItems">
+            <li><a href="index">INICIO</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
-    <nav>
-        <ul id="MenuItems">
-            <li><a href="home.html">INICIO</a></li>
 
-
-        </ul>
-    </nav>
-    <img src="images/cart.png" width="30px" height="30px">
-    <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
-</div>
-
-
-
-
-
-
-<div class="small-container cart-page">
-
-    <div class="box-element" id="form-wrapper">
-        <form id="contactForm">
-
-            <p>Cliente</p>
-
-            <div id="user-info">
-                <div class="form-field">
-                    <input required=""  id="nombre" class="form-control" type="text" name="name" placeholder="Nombre">
-                </div>
-                <div class="form-field">
-                    <input required="" id="tel" class="form-control" type="text" name="telefono" placeholder="Numero de telefono">
-                </div>
-            </div>
-            <p>Direccion</p>
-            <div id="shipping-info">
-                <div class="form-field">
-                    <input required="" id="direccion"  class="form-control" type="text" name="state" placeholder="">
-                </div>
-            </div>
-        </form>
+    <div class="small-container cart-page">
+      <div class="container">
+        <table id="movieTable">
+          <thead>
+            <tr>
+              <th style="text-align: center">Pelicula</th>
+              <th style="text-align: right">Genero</th>
+              <th style="text-align: right">Duracion</th>
+            </tr>
+          </thead>
+          <tbody id="table"></tbody>
+        </table>
+      </div>
     </div>
-    <table>
-        <tbody>
-        <tr>
-            <th style="text-align:center">Producto</th>
-            <th style="text-align:right" >Cantidad</th>
-            <th style="text-align:right">Subtotal</th>
-        </tr>
-        <table id="table"> </table>
-        </tbody>
-    </table>
-</div>
-<div class="row">
-    <a href="home.html" class="btnr">Regresar</a>
-</div>
 
-<div class="footer">
     <div class="container">
-        <div class="row">
-
-            <div class="footer-col-2">
-                <img src="images/logo-white.png" >
-                <p>Nuestro proposito como empresa es brindarte un servicio personalizado para que puedas llevar tus diseños o proyectos en 3D a la realidad, a la vez tambien ofrecemos impresiones 3D prefabricadas en nuestra tienda las cuales podrian ser de tu interes</p>
-            </div>
-            <div class="footer-col-3">
-                <h3>Enlaces</h3>
-                <ul>
-
-                    <a href="./terminosycondiciones.html" ><li>Terminos y condiciones</li> </a>
-                    <a href="./politicas.html" ><li>Pagos y entrega de producto</li> </a>
-                    <a href="./politicas.html" ><li>Producto y especificaciones</li> </a>
-
-                </ul>
-            </div>
-            <div class="footer-col-4">
-                <h3>Contactanos</h3>
-                <ul>
-                    <a href="https://www.facebook.com/TresDSV" ><li>Facebook</li></a>
-                    <a href="https://www.instagram.com/" > <li>Instagram</li> </a>
-                    <a href="https://www.facebook.com/" ><li>Whatsapp</li></a>
-                    <li>Email: 3dtresdsv@gmail.com
-
-                        edgardo.mendoza1g@gmail.com</li>
-                </ul>
-            </div>
-        </div>
-        <hr>
-        <p class="copyright">Copyright © 2021 TresDSV</p>
+      <div class="row" style="margin-bottom: 20px">
+        <!-- Agregado margen inferior -->
+        <a href="movies" class="btnr">Agregar</a>
+      </div>
     </div>
-</div>
 
-<script>
-    var MenuItems=document.getElementById("MenuItems");
-    MenuItems.style.maxHeight="0px";
-    function menutoggle(){
-        if(MenuItems.style.maxHeight=="0px"){
-            MenuItems.style.maxHeight="200px";
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-3">
+            <h3>Enlaces</h3>
+            <ul>
+              <li>
+                <a href="./terminosycondiciones.html">Términos y condiciones</a>
+              </li>
+              <li>
+                <a href="./politicas.html">Pagos y entrega de producto</a>
+              </li>
+              <li>
+                <a href="./politicas.html">Producto y especificaciones</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col-4">
+            <h3>Contactanos</h3>
+            <ul>
+              <li><a href="https://www.facebook.com/TresDSV">Facebook</a></li>
+              <li><a href="https://www.instagram.com/">Instagram</a></li>
+              <li><a href="https://www.facebook.com/">Whatsapp</a></li>
+              <li>Email: marioaquinojob@gmail.com</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      /* Reset de estilos y estilos base */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: #f4f4f4;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Encabezado y navegación */
+      .navbar {
+        background-color: #000;
+        color: #fff;
+        padding: 10px 0;
+        height: 40px;
+      }
+
+      .navbar nav ul {
+        list-style: none;
+        text-align: right;
+        padding: 0;
+        margin: 0;
+      }
+
+      .navbar nav ul li {
+        display: inline;
+        margin-left: 20px;
+      }
+
+      .navbar nav ul li a {
+        text-decoration: none;
+        color: white; /* Cambia el color del texto según tus preferencias */
+        font-weight: bold; /* Puedes ajustar el peso de la fuente */
+      }
+
+      .navbar a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      .navbar a:hover {
+        color: #f7df1e;
+      }
+
+      /* Contenedor principal */
+      .cart-page {
+        padding: 40px 0;
+      }
+
+      .box-element {
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+      }
+
+      table th,
+      table td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      /* Botones y enlaces */
+      .btnr {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #000;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+
+      .btnr:hover {
+        background-color: #f7df1e;
+      }
+
+      /* Footer */
+      .footer {
+        background-color: #000;
+        color: #fff;
+        padding: 40px 0;
+      }
+
+      .footer h3 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+      }
+
+      .footer ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer li {
+        margin-bottom: 10px;
+      }
+
+      .footer a {
+        text-decoration: none;
+        color: #fff;
+        transition: color 0.3s;
+      }
+
+      .footer a:hover {
+        color: #f7df1e;
+      }
+
+      .copyright {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 0.8rem;
+      }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // Hacer una solicitud GET al controlador para obtener las películas disponibles
+        fetch("/api/Movies")
+          .then((response) => response.json())
+          .then((data) => {
+            // Obtener la referencia a la tabla
+            var table = $("#movieTable");
+
+            // Limpiar la tabla
+            table.find("tbody").empty();
+
+            // Iterar a través de las películas y agregarlas a la tabla
+            data.forEach(function (movie) {
+              var newRow =
+                "<tr>" +
+                "<td>" +
+                movie.title +
+                "</td>" +
+                "<td>" +
+                "Terror" +
+                "</td>" +
+                "<td>" +
+                movie.length +
+                "</td>" +
+                "</tr>";
+              table.find("tbody").append(newRow);
+            });
+          })
+          .catch((error) =>
+            console.error("Error al obtener las películas:", error)
+          );
+
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+        function menutoggle() {
+          if (MenuItems.style.maxHeight == "0px") {
+            MenuItems.style.maxHeight = "200px";
+          } else {
+            MenuItems.style.maxHeight = "0px";
+          }
         }
-        else{
-            MenuItems.style.maxHeight="0px";
-        }
-    }
-</script>
-<script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.0/dist/sweetalert2.all.min.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
-<script src="./cart.js"></script>
-</body>
+      });
+    </script>
+
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.0/dist/sweetalert2.all.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+    <script src="./cart.js"></script>
+  </body>
 </html>

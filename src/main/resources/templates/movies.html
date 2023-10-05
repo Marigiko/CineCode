@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movies CRUD</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Movies CRUD</h1>
+
+    <!-- Formulario para crear una nueva película -->
+    <form id="createMovieForm">
+      <h2>Crear Nueva Película</h2>
+      <label for="title">Título:</label>
+      <input type="text" id="title" name="title" required />
+      <label for="length">Duración:</label>
+      <input type="text" id="length" name="length" required />
+      <button type="submit">Crear Película</button>
+    </form>
+
+    <!-- Lista de películas existentes -->
+    <h2>Lista de Películas</h2>
+    <ul id="movieList"></ul>
+
+    <!-- Formulario para actualizar una película -->
+    <form id="updateMovieForm">
+      <h2>Actualizar Película</h2>
+      <input type="hidden" id="updateMovieId" name="id" />
+      <label for="updateTitle">Título:</label>
+      <input type="text" id="updateTitle" name="title" required />
+      <label for="updateLength">Duración:</label>
+      <input type="text" id="updateLength" name="length" required />
+      <button type="submit">Actualizar Película</button>
+    </form>
+
+    <!-- Formulario para buscar películas por título -->
+    <form id="searchMovieForm">
+      <h2>Buscar Películas por Título</h2>
+      <label for="searchTitle">Título:</label>
+      <input type="text" id="searchTitle" name="title" />
+      <button type="submit">Buscar</button>
+    </form>
+
+    <!-- Botón para eliminar todas las películas -->
+    <button id="deleteAllMoviesBtn">Eliminar Todas las Películas</button>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      form {
+        margin-bottom: 20px;
+      }
+
+      form input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 16px;
+      }
+
+      form button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      li b {
+        font-weight: bold;
+      }
+
+      .edit-btn,
+      .delete-btn {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        padding: 5px 10px;
+        cursor: pointer;
+        font-size: 14px;
+        margin-left: 5px;
+      }
+
+      .delete-btn {
+        background-color: #ff5050;
+      }
+
+      .delete-all-btn {
+        background-color: #ff5050;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        padding: 5px 10px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+
+      .delete-all-btn:hover {
+        background-color: #ff0000;
+      }
+
+      .footer {
+        margin-top: 20px;
+        padding-top: 20px;
+        text-align: center;
+        background-color: #333;
+        color: #fff;
+        font-size: 14px;
+      }
+
+      .footer a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+
+    <!-- Script para cargar y controlar las operaciones CRUD -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const createMovieForm = document.getElementById("createMovieForm");
+        const updateMovieForm = document.getElementById("updateMovieForm");
+        const searchMovieForm = document.getElementById("searchMovieForm");
+        const deleteAllMoviesBtn =
+          document.getElementById("deleteAllMoviesBtn");
+        const movieList = document.getElementById("movieList");
+
+        let movies = []; // Almacena la lista de películas
+
+        // Función para mostrar la lista de películas
+        function displayMovies() {
+          movieList.innerHTML = "";
+          movies.forEach((movie) => {
+            const listItem = document.createElement("li");
+            listItem.innerHTML = `<b>${movie.title}:</b> ${movie.length} minutos
+                                  <button class="edit-btn" data-id="${movie.id}">Editar</button>
+                                  <button class="delete-btn" data-id="${movie.id}">Eliminar</button>`;
+            movieList.appendChild(listItem);
+
+            // Agregar eventos para editar y eliminar películas
+            const editBtn = listItem.querySelector(".edit-btn");
+            const deleteBtn = listItem.querySelector(".delete-btn");
+            editBtn.addEventListener("click", () => editMovie(movie.id));
+            deleteBtn.addEventListener("click", () => deleteMovie(movie.id));
+          });
+        }
+
+        // Función para cargar la lista de películas desde el servidor
+        function loadMoviesFromServer() {
+          fetch("/api/Movies")
+            .then((response) => response.json())
+            .then((data) => {
+              movies = data;
+              displayMovies();
+            })
+            .catch((error) =>
+              console.error("Error al cargar las películas:", error)
+            );
+        }
+
+        // Cargar la lista de películas al cargar la página
+        loadMoviesFromServer();
+
+        // Función para crear una nueva película
+        createMovieForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const title = createMovieForm.querySelector("#title").value;
+          const length = createMovieForm.querySelector("#length").value;
+          if (title && length) {
+            const newMovie = { title, length };
+
+            // Realizar una solicitud POST para crear una película
+            fetch("/api/Movies", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(newMovie),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                movies.push(data); // Agregar la nueva película a la lista
+                displayMovies(); // Actualizar la vista
+                createMovieForm.reset();
+              })
+              .catch((error) =>
+                console.error("Error al crear la película:", error)
+              );
+          }
+        });
+
+        // Resto del código para editar, buscar y eliminar películas (sin cambios)
+        // Función para editar una película
+        function editMovie(id) {
+          const movie = movies.find((m) => m.id === id);
+          if (movie) {
+            updateMovieForm.querySelector("#updateMovieId").value = movie.id;
+            updateMovieForm.querySelector("#updateTitle").value = movie.title;
+            updateMovieForm.querySelector("#updateLength").value = movie.length;
+          }
+        }
+
+        updateMovieForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const id = updateMovieForm.querySelector("#updateMovieId").value;
+          const updatedTitle =
+            updateMovieForm.querySelector("#updateTitle").value;
+          const updatedLength =
+            updateMovieForm.querySelector("#updateLength").value;
+          const movieIndex = movies.findIndex((m) => m.id === Number(id));
+          if (movieIndex !== -1 && updatedTitle && updatedLength) {
+            const updatedMovie = {
+              id: Number(id),
+              title: updatedTitle,
+              length: updatedLength,
+            };
+
+            // Realizar una solicitud PUT para actualizar la película
+            fetch(`/api/Movies/${id}`, {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(updatedMovie),
+            })
+              .then(() => {
+                movies[movieIndex] = updatedMovie; // Actualizar la película en la lista
+                displayMovies(); // Actualizar la vista
+                updateMovieForm.reset();
+              })
+              .catch((error) =>
+                console.error("Error al actualizar la película:", error)
+              );
+          }
+        });
+
+        // Función para buscar películas por título
+        searchMovieForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const searchTitle =
+            searchMovieForm.querySelector("#searchTitle").value;
+          if (searchTitle) {
+            // Realizar una solicitud GET para buscar películas por título
+            fetch(`/api/Movies?title=${searchTitle}`)
+              .then((response) => response.json())
+              .then((data) => {
+                movies = data; // Actualizar la lista con los resultados de la búsqueda
+                displayMovies(); // Actualizar la vista
+              })
+              .catch((error) =>
+                console.error("Error al buscar películas por título:", error)
+              );
+          }
+        });
+
+        // Función para eliminar una película
+        function deleteMovie(id) {
+          // Realizar una solicitud DELETE para eliminar la película por ID
+          fetch(`/api/Movies/${id}`, {
+            method: "DELETE",
+          })
+            .then(() => {
+              movies = movies.filter((movie) => movie.id !== id); // Quitar la película de la lista
+              displayMovies(); // Actualizar la vista
+            })
+            .catch((error) =>
+              console.error("Error al eliminar la película:", error)
+            );
+        }
+
+        // Función para eliminar todas las películas
+        deleteAllMoviesBtn.addEventListener("click", () => {
+          // Realizar una solicitud DELETE para eliminar todas las películas
+          fetch("/api/Movies", {
+            method: "DELETE",
+          })
+            .then(() => {
+              movies = []; // Vaciar la lista de películas
+              displayMovies(); // Actualizar la vista
+            })
+            .catch((error) =>
+              console.error("Error al eliminar todas las películas:", error)
+            );
+        });
+      });
+    </script>
+  </body>
+</html>

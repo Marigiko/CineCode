@@ -29,4 +29,18 @@ public class PathController {
 
     }
 
+    @GetMapping("/users")
+    public String user(Model model){
+
+        return "users";
+
+    }
+
+    @GetMapping("/movies")
+    public String movie(Model model){
+
+        return "movies";
+
+    }
+
 }
