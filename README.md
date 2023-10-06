@@ -15,7 +15,7 @@ CineCode is a cinema management application designed to simplify and automate ci
 ![Dashboard](resources/CineCode-MainPage.png)
 *Screenshot of the CineCode General Dashboard*
 
-![List of Movies](resources/CineCode-Movies.png)
+![List of Movies](resources/CineCode-Peliculas.png)
 *Screenshot of the List of Movies in Theaters*
 
 ## Installation
